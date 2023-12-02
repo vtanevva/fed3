@@ -18,7 +18,7 @@
     </div>
 </body>
 <script>
-        document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
     const getPokemonButton = document.getElementById("pokemon-button");
     const cardContainer = document.getElementById("cards-container");
 
@@ -59,19 +59,24 @@
 
         cardContainer.appendChild(card);
     }
+    function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
     function revealPokemon(name, url, id, height, weight) {
+        const capitalizedName = capitalizeFirstLetter(name);
         const revealedCard = event.currentTarget;
         revealedCard.innerHTML = `
-            <p>Name: ${name}</p>
-            <p>ID: ${id}</p>
-            <p>Height: ${height} dm</p>
-            <p>Weight: ${weight} hg</p>
-            <img src="${url}" alt="${name} sprite">
+            <p class="data" >name: ${capitalizedName}</p>
+            <p class="data">ID: #${id}</p>
+            <p class="data">height: ${height}<span class="metrics">m</span></p>
+            <p class="data">weight: ${weight}<span class="metrics">kg</span></p>
+            <img class="image" src="${url}" alt="${name} sprite">
         `;
-        revealedCard.classList.add("selected");
+        revealedCard.classList.add("select");
         revealedCard.style.pointerEvents = "none"; 
     }
+    
 
     function removeCrads(selectedCard) {
         const cards = cardContainer.getElementsByClassName("card");
