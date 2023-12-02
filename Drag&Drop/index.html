@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+#div1 {
+  width: 335px;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  border-radius: 25px;
+  border-style:  2px solid brown;
+}
+#drag1 {
+  border-radius: 25px;
+
+}
+body {
+  background-color: #f2f2f2;
+
+}
+.main {
+  position: absolute;
+  left: 35%;
+  top: 100px;
+  text-align: center;
+}
+</style>
+<script>
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drag(event) {
+  event.dataTransfer.setData("text", event.target.id);
+}
+
+function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("text");
+  var draggedElement = document.getElementById(data);
+  event.target.appendChild(draggedElement);
+}
+
+
+</script>
+</head>
+<body>
+<div class="main">
+<p>Drag the image into the rectangle:</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="images/dogchi.jpg" draggable="true" ondragstart="drag(event)" width="336" height="200">
+</div>
+</body>
+</html>

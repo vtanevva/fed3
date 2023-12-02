@@ -1,0 +1,79 @@
+body {
+    text-align: center;
+    font-family: 'Annie Use Your Telescope';
+    background-color: #424242;
+}
+h1 {
+    color: #f2f2f2; 
+    font-weight: 550;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    font-family: 'Roboto';
+}
+
+.card {
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 300px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-color: white; 
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+.grass { 
+    background-color: green; 
+}
+.fire { 
+    background-color: #c4611f; 
+}  
+.water { 
+    background-color: #3498db ; 
+} 
+
+.main {
+    position: relative;
+    font-size: 36px;
+    
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    position: relative;
+    bottom: 45px;
+}
+
+button:hover {
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+.logo {
+    background-image: url(images/logo-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    border-style: 2px solid black;
+}
+.logo p {
+    position: relative;
+    font-size: 20px;
+    bottom: 15px;
+    color: #424242;
+}
